@@ -5,49 +5,52 @@ SWoL - the Simple Workout Log - is an exercise tracking web app
 ## Features
 * Create, edit, and delete exercises
 * Input validation and error reporting
-* MongoDB/Express API
+* PostgreSQL/Express API
 * React-based SPA user interface
 
 ## Prerequisites
 * Node.js
 * npm
-* a mongodb database and credentials
- 
+* PostgreSQL database and credentials
+
 ## Installation
-You will need to install and start both the _exercise-api_ and _exercise-ui_ components in that order.
-The UI will not start properly without an instance of the API running first!
+
+Start the _exercise-api_ before the _exercise-ui_ — the UI will not work without a running API.
+
 ### API Setup
-1. Create a .env file in /exercise-api - See [/exercise_api/env_example]() for a template
-* Specify the port number the api will run on
-* Include the mongodb login uri (see mongodb documentation for details)
-2. Open a terminal and navigate to /exercise-api and run the following commands...
+1. Create a `.env` file in `/exercise-api` using `/exercise-api/env_example` as a template:
+   * `PORT` — port the API will listen on
+   * `PGHOST`, `PGPORT`, `PGDATABASE`, `PGUSER`, `PGPASSWORD` — PostgreSQL connection details
+   * `CORS_ORIGIN` — origin URL of the UI (e.g. `http://localhost:3001`)
+2. Ensure PostgreSQL is running and the target database exists (`createdb swol`)
+3. In a terminal, navigate to `/exercise-api` and run:
 
 ```bash
 npm install
 npm start
 ```
-3. You should see a console message indicating a successful connection to MongdoDB, as well as the port number of the API
-4. API is now ready to accept connections. 
-5. (Optionally, at this point you can run some initial unit tests.)
+4. You should see a message confirming the database connection and the port the API is listening on. The `exercises` table is created automatically on first start.
 
 ### UI Setup
-1. Create a .env file in /exercise-ui - See [/exercise_ui/env_example]() for a template
-* Specify the port number the ui will run on
-2. Update the "proxy" line in /exercise-ui/package.json to reflect the url/port that the _API_ (not the UI) is accepting connections on.
-3. Open a terminal and navigate to /exercise-api. Run the following commands...
+1. Create a `.env` file in `/exercise-ui` using `/exercise-ui/env_example` as a template:
+   * `PORT` — port the UI will run on
+   * `REACT_APP_API_URL` — base URL of the API (e.g. `http://localhost:3000`)
+2. In a terminal, navigate to `/exercise-ui` and run:
 
 ```bash
 npm install
 npm start
 ```
-4. You should see a console message indicating a successful start and providing the UI URL
-## Testing
-There are some basic unit tests for the API in [/exercise-api/test-requests.http]()
+3. You should see a message indicating a successful start with the UI URL.
 
-These tests are meant to be run on an empty database and may not function properly when used on a 
+## Testing
+There are basic API tests in `/exercise-api/test-requests.http` (VSCode REST Client format).
+
+These tests are meant to be run on an empty database and may not function properly on a populated one.
 
 ## Roadmap
 * User authentication using Auth0 (currently in development - see branch)
+
 ## License
 Copyright &copy; Colin Cummins 2023
 
