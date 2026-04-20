@@ -1,7 +1,7 @@
 # Create a .env file in the current directory using this template
 
-# Port the UI will accept connections on
-PORT=3001
+# Port the UI dev server will run on (set in vite.config.js server.port)
+PORT=5173
 
 # Base URL of the exercise API
-REACT_APP_API_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000
