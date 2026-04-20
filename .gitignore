@@ -1,8 +1,12 @@
 CLAUDE.md
 /exercise-api/.env
+/exercise-ui/.env
 /.idea/.gitignore
 /.idea/CS290_Assignment7.iml
 /.idea/vcs.xml
 /.idea/modules.xml
 /exercise-api/node_modules/
+/exercise-ui/node_modules/
+/exercise-ui/build/
+npm-debug.log*
 /.idea/dataSources.xml

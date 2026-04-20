@@ -1,4 +1,12 @@
-# Port the api will accept connections on.
-PORT=xxxx
-# Connection string to pass to mongoose.connect(). See MongoDB documentation.
-MONGODB_CONNECT_STRING="mongodb+srv://<username>:<password>@<server>/?retryWrites=true&w=majority"
+# Port the API will accept connections on
+PORT=3000
+
+# PostgreSQL connection (pg reads PG* vars automatically)
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=swol
+PGUSER=
+PGPASSWORD=
+
+# Allowed CORS origin for the UI (use * to allow all during local dev)
+CORS_ORIGIN=http://localhost:3001

@@ -1,4 +1,7 @@
 # Create a .env file in the current directory using this template
 
 # Port the UI will accept connections on
-PORT=XXXX
+PORT=3001
+
+# Base URL of the exercise API
+REACT_APP_API_URL=http://localhost:3000

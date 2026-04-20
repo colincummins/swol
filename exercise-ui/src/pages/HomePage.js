@@ -9,15 +9,15 @@ function HomePage({setExerciseToEdit}) {
     const history = useHistory()
 
     const loadExercises = async () => {
-        const response = await fetch('/exercises');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/exercises`);
         const exercises = await response.json();
         setExercises(exercises);
     }
 
     const onDelete = async id => {
-        const response = await fetch(`/exercises/${id}`, { method: 'DELETE' });
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/exercises/${id}`, { method: 'DELETE' });
         if (response.status === 204) {
-            const getResponse = await fetch('/exercises');
+            const getResponse = await fetch(`${process.env.REACT_APP_API_URL}/exercises`);
             const exercises = await getResponse.json();
             setExercises(exercises);
         } else {
