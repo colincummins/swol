@@ -1,5 +1,6 @@
 import React from 'react';
-import {MdDeleteForever, BsPencilFill} from "react-icons/all";
+import { MdDeleteForever } from "react-icons/md";
+import { BsPencilFill } from "react-icons/bs";
 
 
 function Exercise({ exercise, onDelete, onEdit }) {
