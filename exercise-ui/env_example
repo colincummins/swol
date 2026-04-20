@@ -1,7 +1,7 @@
 # Create a .env file in the current directory using this template
 
-# Port the UI dev server will run on (Vite default is 5173)
-PORT=3001
+# Port the UI dev server will run on (set in vite.config.js server.port)
+PORT=5173
 
 # Base URL of the exercise API
 VITE_API_URL=http://localhost:3000

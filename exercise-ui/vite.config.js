@@ -15,6 +15,9 @@ export default defineConfig({
     optimizeDeps: {
         esbuildOptions: { loader: { '.js': 'jsx' } },
     },
+    server: {
+        port: parseInt(process.env.PORT) || 5173,
+    },
     test: {
         environment: 'jsdom',
         globals: true,
